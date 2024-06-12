@@ -30,7 +30,11 @@ export default {
           }
       })
       .then(res => {
-        console.log(res.data.result.data)
+        // console.log(this.store.projects, 'progetti')
+        this.store.projects = res.data.result.data
+        // console.log(this.store.projects, 'progetti dopo')
+
+        
       })
     }
   },
