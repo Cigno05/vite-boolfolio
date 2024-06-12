@@ -1,20 +1,42 @@
 <script>
 import { store } from './store.js'
 import AppHeader from './components/AppHeader.vue'
-import AppContent from './components/AppContent.vue'
+import AppMain from './components/AppMain.vue'
 import AppFooter from './components/AppFooter.vue'
+import axios from 'axios'
 
 export default {
   components: {
     AppHeader,
-    AppContent,
+    AppMain,
     AppFooter,
   },
   data() {
     return {
       store,
     }
-  }
+  },
+
+  methods: {
+    changePage(n) {
+      if(n === this.currentPage) return
+      this.currentPage = n
+      this.fetchProjects()
+    },
+    fetchProjects() {
+      axios.get('http://127.0.0.1:8000/api/projects',{
+        	params: {
+            page: this.currentPage,
+          }
+      })
+      .then(res => {
+        console.log(res.data.result.data)
+      })
+    }
+  },
+  created () {
+    this.fetchProjects();
+  },
 }
 
 </script>
@@ -23,7 +45,7 @@ export default {
 
   <div id="app">
     <AppHeader></AppHeader>
-    <AppContent></AppContent>
+    <AppMain></AppMain>
     <AppFooter></AppFooter>
 
   </div>
