@@ -1,8 +1,8 @@
 <script>
 import { store } from './store.js'
-// import AppHeader from './components/AppHeader.vue'
+import AppHeader from './components/AppHeader.vue'
 // import AppMain from './components/AppMain.vue'
-// import AppFooter from './components/AppFooter.vue'
+import AppFooter from './components/AppFooter.vue'
 import { createMemoryHistory, createRouter } from 'vue-router'
 
 import AppHome from './pages/AppHome.vue'
@@ -22,9 +22,9 @@ const router = createRouter({
 
 export default {
   components: {
-    // AppHeader,
+    AppHeader,
     // AppMain,
-    // AppFooter,
+    AppFooter,
   },
   data() {
     return {
@@ -38,17 +38,20 @@ export default {
 <template>
 
   
-  <p>
+  <!-- <p>
     <strong>Current route path:</strong> {{ $route.fullPath }}
-  </p>
-  <nav class="d-flex gap-2">
+  </p> -->
+  <!-- <nav class="d-flex gap-2">
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/portfolio">Portfolio</RouterLink>
     <RouterLink to="/contact">Contact</RouterLink>
-  </nav>
+  </nav> -->
+
+  <AppHeader></AppHeader>
   <main>
     <RouterView />
   </main>
+  <AppFooter></AppFooter>
 
 
 

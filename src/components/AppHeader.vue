@@ -14,7 +14,11 @@ export default {
 <template>
 
   <header>
-    <h1>Header</h1>
+    <nav class="d-flex gap-2">
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/portfolio">Portfolio</RouterLink>
+    <RouterLink to="/contact">Contact</RouterLink>
+  </nav>
   </header>
 
 </template>
