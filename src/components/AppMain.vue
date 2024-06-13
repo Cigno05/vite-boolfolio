@@ -32,6 +32,8 @@ export default {
       this.fetchProjects()
     },
 
+    
+
   },
   created() {
 
@@ -58,17 +60,14 @@ export default {
               {{ number }}
             </li>
           </ul>
+          
         </div>
       </div>
       <div class="row">
         <div class="col-4 card-group" v-for="project in store.projects" :key="project.id">
 
-          <ProjectCard 
-           :title="project.title"
-           :date="project.creation_date"
-           :type="project.type?.name"
-           :techs="project.technologies"
-          ></ProjectCard>
+          <ProjectCard :title="project.title" :date="project.creation_date" :type="project.type?.name"
+            :techs="project.technologies"></ProjectCard>
 
           <!-- <ProjectCard
           :project="project"

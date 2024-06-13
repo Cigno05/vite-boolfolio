@@ -13,7 +13,7 @@
                             placeholder="Enter your email">
                     </div>
                     <div class="mb-3">
-                        <label for="description" class="form-label">Email</label>
+                        <label for="description" class="form-label">Add text</label>
                         <textarea type="text" class="form-control" id="description" row="20"
                             placeholder="Enter your request"></textarea>
                     </div>
