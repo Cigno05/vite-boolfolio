@@ -1,17 +1,47 @@
 <script>
 import { store } from '../store.js'
+import axios from 'axios'
+import ProjectCard from './ProjectCard.vue'
 
 export default {
   components: {
+    ProjectCard,
+  },
+
+  methods: {
+    fetchProjects() {
+      axios.get('http://127.0.0.1:8000/api/projects', {
+        params: {
+          page: store.currentPage,
+        }
+      })
+        .then(res => {
+          // console.log(this.store.projects, 'progetti')
+          this.store.projects = res.data.result.data
+
+          // console.log(res.data.result.last_page , 'ultima')
+          this.store.lastPage = res.data.result.last_page
+
+
+        })
+    },
+
+    changePage(n) {
+      if (n === store.currentPage) return
+      store.currentPage = n
+      this.fetchProjects()
+    },
+
   },
   created() {
-    // console.log(store.projects[0].technologies);
+
+    this.fetchProjects();
   },
   data() {
     return {
       store,
     }
-  }
+  },
 }
 
 </script>
@@ -21,16 +51,28 @@ export default {
   <main>
     <div class="container">
       <div class="row">
-
+        <div class="col">
+          <ul class="p-0 d-flex flex-row gap-2 justify-content-center">
+            <li :class="number === store.currentPage ? 'text-danger fw-bold' : ''" @click="changePage(number)"
+              v-for="number in store.lastPage" :key="number" class="">
+              {{ number }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-4 card-group" v-for="project in store.projects" :key="project.id">
-            <div class="card my-3">
-              <div class="card-body">
-                <h1 class="card-title mb-4">{{ project.title }}</h1>
-                <p class="card-text">Created: {{ project.creation_date }}</p>
-                <p class="card-text">Project Type: {{ project.type?.name }}</p>
-                <p class="card-text" >Technologies used: <span v-for="technology in project.technologies" :key="technology.id">{{ technology.name }} </span></p> <!-- mettere lo spazio -->
-              </div>
-            </div>
+
+          <ProjectCard 
+           :title="project.title"
+           :date="project.creation_date"
+           :type="project.type?.name"
+           :techs="project.technologies"
+          ></ProjectCard>
+
+          <!-- <ProjectCard
+          :project="project"
+          ></ProjectCard> -->
         </div>
       </div>
     </div>
