@@ -91,6 +91,8 @@ export default {
                     <!-- <ProjectCard
           :project="project"
           ></ProjectCard> -->
+
+          <RouterLink :to="{name:'project', params:{slug:project.slug}}">Show</RouterLink>
                 </div>
             </div>
         </div>

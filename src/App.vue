@@ -9,16 +9,6 @@ import AppHome from './pages/AppHome.vue'
 import AppContact from './pages/AppContact.vue'
 import AppPortfolio from './pages/AppPortfolio.vue'
 
-const routes = [
-  { path: '/', component: AppHome },
-  { path: '/contact', component: AppContact },
-  { path: '/portfolio', component: AppPortfolio },
-]
-
-const router = createRouter({
-  history: createMemoryHistory(),
-  routes,
-})
 
 export default {
   components: {
