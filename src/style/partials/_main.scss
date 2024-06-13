@@ -1,3 +1,10 @@
 .select-page {
     width: 70px;
+
+}
+
+.list-page {
+    & li:hover {
+        cursor: pointer;
+    }
 }

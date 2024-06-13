@@ -60,7 +60,7 @@ export default {
             <div class="row">
                 <div class="col d-flex gap-3 justify-content-between align-items-center">
                     <div>
-                        <ul class="p-0 m-0 d-flex flex-row gap-2 align-items-center flex-wrap">
+                        <ul class="p-0 m-0 d-flex flex-row gap-2 align-items-center flex-wrap list-page">
                             <li :class="number === store.currentPage ? 'text-danger fw-bold' : ''"
                                 @click="changePage(number)" v-for="number in store.lastPage" :key="number" class="">
                                 {{ number }}
