@@ -1,0 +1,65 @@
+main {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    color: white;
+    background: radial-gradient(circle, rgba(85, 85, 85, 1) 0%, rgba(0, 0, 0, 1) 100%);
+
+
+    & .type-form {
+        & label {
+            color: var(--brand-color);
+        }
+
+        & .form-control {
+
+            background-color: black;
+            color: white;
+            border: 1px solid var(--brand-color);
+
+            & option:target {
+                background-color: black;
+                color: var(--brand-color);
+            }
+
+        }
+    }
+
+    & .current-page {
+        border: solid 1px var(--brand-color);
+        border-radius: 5px;
+        padding: 0px 5px;
+    }
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    main {
+        flex-grow: 1;
+      }
+
+}
+
+.select-page {
+    width: 70px;
+
+}
+
+.list-page {
+    & li:hover {
+        cursor: pointer;
+    }
+}
+
+.select-page {
+    width: 70px;
+
+}
+
+.list-page {
+    & li:hover {
+        cursor: pointer;
+
+    }
+}

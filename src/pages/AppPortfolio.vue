@@ -61,7 +61,7 @@ export default {
                 <div class="col d-flex gap-3 justify-content-between align-items-center">
                     <div>
                         <ul class="p-0 m-0 d-flex flex-row gap-2 align-items-center flex-wrap list-page">
-                            <li :class="number === store.currentPage ? 'text-danger fw-bold' : ''"
+                            <li :class="number === store.currentPage ? 'current-page' : ''"
                                 @click="changePage(number)" v-for="number in store.lastPage" :key="number" class="">
                                 {{ number }}
                             </li>
@@ -71,6 +71,7 @@ export default {
                         <p class="m-0">Projects for page:</p>
                         <select @change="changePerPage()" v-model="store.choice" class="form-select select-page py-0 "
                             aria-label="Default select example">
+                            <option selcted>12</option>
                             <option value="3">3</option>
                             <option value="6">6</option>
                             <option value="9">9</option>
@@ -86,13 +87,12 @@ export default {
                 <div class="col-4 card-group" v-for="project in store.projects" :key="project.id">
 
                     <ProjectCard :title="project.title" :date="project.creation_date" :type="project.type?.name"
-                        :techs="project.technologies"></ProjectCard>
+                        :techs="project.technologies" :slug="project.slug"></ProjectCard>
 
                     <!-- <ProjectCard
           :project="project"
           ></ProjectCard> -->
 
-          <RouterLink :to="{name:'project', params:{slug:project.slug}}">Show</RouterLink>
                 </div>
             </div>
         </div>

@@ -52,7 +52,7 @@ export default {
 
   <main>
     <div class="container">
-      <div class="row">
+      <div class="row mb-3">
         <div class="col">
           <ul class="p-0 d-flex flex-row gap-2 justify-content-center">
             <li :class="number === store.currentPage ? 'text-danger fw-bold' : ''" @click="changePage(number)"
@@ -64,7 +64,7 @@ export default {
         </div>
       </div>
       <div class="row">
-        <div class="col-4 card-group" v-for="project in store.projects" :key="project.id">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-4 card-group" v-for="project in store.projects" :key="project.id">
 
           <ProjectCard :title="project.title" :date="project.creation_date" :type="project.type?.name"
             :techs="project.technologies"></ProjectCard>

@@ -5,9 +5,9 @@ import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
 import { createMemoryHistory, createRouter } from 'vue-router'
 
-import AppHome from './pages/AppHome.vue'
-import AppContact from './pages/AppContact.vue'
-import AppPortfolio from './pages/AppPortfolio.vue'
+// import AppHome from './pages/AppHome.vue'
+// import AppContact from './pages/AppContact.vue'
+// import AppPortfolio from './pages/AppPortfolio.vue'
 
 
 export default {
@@ -55,5 +55,5 @@ export default {
 </template>
 
 <style lang="scss">
-@use './style/general.scss';
+@use './scss/app.scss';
 </style>
