@@ -64,7 +64,7 @@ export default {
         </div>
       </div>
       <div class="row">
-        <div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-4 card-group" v-for="project in store.projects" :key="project.id">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-12 card-group" v-for="project in store.projects" :key="project.id">
 
           <ProjectCard :title="project.title" :date="project.creation_date" :type="project.type?.name"
             :techs="project.technologies"></ProjectCard>

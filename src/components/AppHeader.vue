@@ -15,7 +15,7 @@ export default {
 
   <header>
 
-    <nav class="navbar navbar-expand-md bg-dark fixed-top shadow-sm header-nav navbar-dark">
+    <nav class="navbar navbar-expand-md bg-dark sticky-top shadow-sm header-nav navbar-dark">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="">
           <div class="logo_laravel">
