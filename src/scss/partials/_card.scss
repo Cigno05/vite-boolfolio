@@ -24,11 +24,11 @@
         color: var(--brand-color);
     }
 
-    & li {
-        border: solid 1px var(--brand-color);
-        border-radius: 5px;
-        padding: 0px 5px;
-    }
+    // & li {
+    //     border: solid 1px var(--brand-color);
+    //     border-radius: 5px;
+    //     padding: 0px 5px;
+    // }
 
     & .btn-delete:hover {
                 color: red;

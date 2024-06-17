@@ -6,6 +6,7 @@ import { createWebHistory, createRouter } from 'vue-router'
 import AppHome from './pages/AppHome.vue'
 import AppContact from './pages/AppContact.vue'
 import AppPortfolio from './pages/AppPortfolio.vue'
+import AppPage404 from './pages/AppPage404.vue'
 import AppProjectShow from './pages/AppProjectShow.vue'
 
 
@@ -25,7 +26,12 @@ const routes = [
     
     {
         path: '/portfolio/:slug', name:'project', component: AppProjectShow
-    }
+    },
+    {
+        path: '/:pathMatch(.*)*', name: 'NotFound', component: AppPage404
+    },
+    
+        
 
 
 ]

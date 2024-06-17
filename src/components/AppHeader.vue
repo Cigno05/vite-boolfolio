@@ -26,9 +26,8 @@ export default {
         <div class="d-flex gap-3">
           <RouterLink to="/"><span class="nav-link">Home</span></RouterLink>
           <RouterLink to="/portfolio"><span class="nav-link">Portfolio</span></RouterLink>
-          <RouterLink to="/contact"><span class="nav-link">Contact</span></RouterLink>
         </div>
-
+        <RouterLink to="/contact"><span class="nav-link">Contact</span></RouterLink>
       </div>
 
     </nav>
